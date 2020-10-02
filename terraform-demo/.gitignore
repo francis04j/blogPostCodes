@@ -41,3 +41,6 @@ msbuild.wrn
 
 # Terraform
 .terraform
+status.txt
+terraform.tfstate
+terraform.tfstate.backup
