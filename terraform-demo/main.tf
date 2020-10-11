@@ -3,23 +3,32 @@ provider "azurerm"  {
     features {}
 }
 
-resource "azurerm_resource_group" "tf_test" {
-    name = "tfmainrg"
+terraform {
+    backend "azurerm" {
+        resource_group_name  = "tf_rg_blobstore"
+        storage_account_name = "terrastorageweatherapi"
+        container_name       = "tfweatherstate"
+        key                  = "terraform.tfstate"
+    }
+}
+
+resource "azurerm_resource_group" "tf_weather" {
+    name = "weatherapirg"
     location = "uksouth"
 }
 
-resource "azurerm_container_group" "tf_coner" {
+resource "azurerm_container_group" "tf_container" {
     name =                  "weatherapi"
-    location =              azurerm_resource_group.tf_test.location
-    resource_group_name =   azurerm_resource_group.tf_test.name
+    location =              azurerm_resource_group.tf_weather.location
+    resource_group_name =   azurerm_resource_group.tf_weather.name
 
     ip_address_type    = "public"
-    dns_name_label      = "francis04jwa"
+    dns_name_label      = "francis04jweather"
     os_type             = "Linux"
 
     container {
-      name            = "weatherapi"
-      image           = "francis04j/weatherapi"
+        name            = "franisweatherapi"
+        image           = "francis04j/weatherapi"
         cpu             = "1"
         memory          = "1"
 
