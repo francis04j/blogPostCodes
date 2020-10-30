@@ -6,3 +6,5 @@ export const GEOJSON_URL =
   'https://raw.githubusercontent.com/nvkelso/natural-earth-vector/master/geojson/ne_110m_admin_0_countries.geojson';
 export const CASES_API =
   'https://raw.githubusercontent.com/wobsoriano/covid3d/master/data.json';
+export const COUNTRIES_API =
+  'https://restcountries.eu/rest/v2/name';

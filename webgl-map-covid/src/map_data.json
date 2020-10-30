@@ -1,0 +1,10 @@
+{
+    "features": [
+        {
+            "type": "Feature",
+            "properties": {
+                "NAME": "Afghanistan" 
+            }
+        }
+    ]
+}

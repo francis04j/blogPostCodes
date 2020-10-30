@@ -1,3 +1,20 @@
+FRANCIS WORLD MUSING
+Personal online world scratch map
+a selection of radio button 
+Facts
+ Country
+ Capital
+ Cities
+ Population
+ Languages
+Intesresting story - Hope to go there (or something about visit)
+Culture - 
+  Food
+  Dress style
+  Man/Woman relationship
+  Job Security
+Covid Data
+
 <a href="https://www.buymeacoffee.com/7eDrfr4fv" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/lato-orange.png" alt="Buy Me A Coffee" style="height: 41px !important;width: 174px !important;" ></a>
 
 # COVID-3D

@@ -19,16 +19,23 @@
   <body>
     <div id="globeViz"></div>
     <div class="top-info-container">
-      <div class="title">COVID-19</div>
+      <div class="title">FRANCIS WORLD MUSINGS</div>
       <div class="title-desc">
-        Loading countries affected by the virus...
+        Loading countries around the world...
       </div>
     </div>
 
     <div class="bottom-info-container">
       <div style="display: flex; justify-content: center;">
         <div class="timeline-container">
-          <button disabled style="margin-right: 10px;" class="play-button">
+          <p>Please select interested data: </p>
+          <input type="radio" id="male" name="gender" value="male">
+          <label for="male">Facts </label><br>
+          <input type="radio" id="female" name="gender" value="female">
+          <label for="female">Interesting Story </label><br>
+          <input type="radio" id="other" name="gender" value="other">
+          <label for="other">Culture </label>
+          <!-- <button disabled style="margin-right: 10px;" class="play-button">
             Play
           </button>
           <input
@@ -42,10 +49,10 @@
           <span
             style="font-size: 14px; color: #ccd6f6;"
             class="slider-date"
-          ></span>
+          ></span> -->
         </div>
       </div>
-      <div style="font-size: 14px; color: #ccd6f6; margin-top: 35px;">
+      <!-- <div style="font-size: 14px; color: #ccd6f6; margin-top: 35px;">
         Total Counts <span class="updated"></span>
       </div>
       <div style="color: #e6f1ff; padding: 0 5px;">
@@ -60,7 +67,7 @@
           style="color: #ffffff; text-decoration: none;"
           >More Information</a
         >
-      </div>
+      </div> -->
     </div>
 
     <script src="./app.js"></script>
