@@ -106,18 +106,8 @@ async function getCases() {
   document.querySelector('.title-desc').innerHTML =
   'Hover on a country or territory see my comments about the place ';
 
- // dates = Object.keys(countries.China);
-
-  // Set slider values
-  //slider.max = dates.length - 1;
- // slider.value = dates.length - 1;
-
- // slider.disabled = false;
-  // playButton.disabled = false;
-
- //  updateCounters();
-  updatePolygonsData();
-  // initPolygonData();
+  //initPolygonData();
+    updatePolygonsData();
   updatePointOfView();
 }
 
@@ -141,18 +131,21 @@ async function initPolygonData() {
 async function updatePolygonsData() {
   for (let x = 0; x < featureCollection.length; x++) {
    // console.log(featureCollection[x].properties)
-    const country = featureCollection[x].properties.NAME;
-    const postal = featureCollection[x].properties.POSTAL;
-    let capitalCity;
-      let API_URL = `${COUNTRIES_API}/${country}`
-      countries = await request(API_URL);
+    let country = featureCollection[x].properties.NAME;
+    let capitalCity= [];
+   //let API_URL = `${COUNTRIES_API}/${country}`
+  
+   console.log('Country',country)
+   countries.reduce((capitalCity1, elem) => {
+     console.log('Francis s', country)
+        if(elem.name.common == country ){
+          capitalCity.push(elem.capital)
+        return elem.capital;
+        }
+        
+   }, []);
      // TODO: add special cases for Taiwan and others, countries with no capital
-     if(countries && countries[0]) {
-      console.log('Capital',country, postal, countries[0].capital)
-      capitalCity = countries[0].capital
-     }else {
-      capitalCity = 'Unknown'
-     }
+     console.log('Capital',capitalCity)
      // console.log('Capital city', countries[1][0]['capitalCity'])
       if(country == 'Nigeria'){
         featureCollection[x].mapData = {
