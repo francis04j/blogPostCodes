@@ -1,0 +1,40 @@
+Sources: https://www.youtube.com/watch?v=0SJCYPsef54
+https://medium.com/mindorks/what-is-git-object-model-6009c271ca66#:~:text=Blob%20is%20an%20abbreviation%20for,the%20contents%20of%20a%20file.
+@5:45 - how git works
+Git makes blobs from the files that you push to the repository
+
+A blob (binary large object) is a file that contents of a file that you pushed and it is hashed
+
+The directory where th file lives is also hashed, replicated in an object type called Tree
+
+Tree example
+blob. 43dds-HASH demo.txt
+
+At the top of every commit/repo is a single tree.
+
+The hash of the top tree is based on the the hashes of the sub-trees and blobs
+
+There is never a delta of files stored. IF you make a single change to file, a new commit has to b made
+
+HANDY (run this in a separate terminal)
+while; do; clear; tree .git; sleep 1; done  -- this continuously clear th clear and run th tree command on .git directory
+
+git add and git commit are porcelain commands (high-level abstraction) - Onion-skin API: presents high level to public, peel it back, present lower level
+git hash-object
+
+Each blob object contain snapshots of our files (the content of our files at the time of the commit) and have their checksum header.
+
+A tree is a directory listing
+
+four objects in the directory in .git/objects :
+An object storing the backup of index.txt 
+An object storing the backup  of README.md files.
+An object storing the directory listing for the commit.
+An object storing the commit message.
+
+.git/ref/heads are where our branches are stored. it contains hashes of our branch commits
+
+HEAD is a symbolic ref to our current branch
+
+git checkout HEAD -- file.txt --: this command reverts file.txt to the previous commit
+-- (dash dash) is used to apply command to files
